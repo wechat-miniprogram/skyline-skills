@@ -1,8 +1,8 @@
-# WXSS BNF Flex 布局属性
+# WXSS Flex 布局属性
 
 本文档定义 Skyline WXSS 支持的 Flex 布局属性。
 
-> ✅ 以下 Flex 属性的所有值在渲染层**完全支持**（除特别标注外）。
+> ✅ 以下 Flex 属性的所有值**完全支持**（除特别标注外）。
 
 ---
 
@@ -13,14 +13,23 @@
 flex-direction = row | row-reverse | column | column-reverse
 flex-wrap = nowrap | wrap | wrap-reverse
 ```
+flex-direction 默认值：`column`（`rendererOptions.skyline.defaultDisplayBlock: true` 时为 `row`）
 
 ### align-items / align-self / align-content / justify-content
 ```bnf
-align-items = stretch | center | flex-start | flex-end | baseline | normal | start | end
-align-self = auto | stretch | center | flex-start | flex-end | baseline | start | end | normal
-align-content = stretch | center | flex-start | flex-end | space-between | space-around | space-evenly | normal | start | end
-justify-content = center | flex-start | flex-end | space-between | space-around | space-evenly | start | end
+align-items = stretch | center | flex-start | flex-end | baseline
+            | normal | start | end | self-start | self-end
+align-self = auto | stretch | center | flex-start | flex-end | baseline
+           | start | end | self-start | self-end | normal
+align-content = stretch | center | flex-start | flex-end
+              | space-between | space-around | space-evenly
+              | normal | start | end | baseline
+justify-content = center | flex-start | flex-end
+                | space-between | space-around | space-evenly
+                | start | end | left | right | baseline | stretch
 ```
+align-items 默认值：`stretch`（`rendererOptions.skyline.defaultDisplayBlock: true` 时为 `normal`）
+align-content 默认值：`normal`
 
 ---
 
@@ -43,8 +52,8 @@ order = <integer>             /* 默认 0 */
 ```bnf
 justify-items = stretch | center | flex-start | flex-end | start | end | self-start | self-end | left | right
 ```
-> ⛔ 整个属性不可用
+> ⛔ 不可用
 
 ---
 
-*本文档基于 Skyline 渲染引擎官方文档与实际测试生成。*
+*本文档基于 Skyline 官方文档与实际测试生成。*

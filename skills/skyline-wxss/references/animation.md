@@ -1,8 +1,8 @@
-# WXSS BNF 变换、过渡与动画
+# WXSS 变换、过渡与动画
 
 本文档定义 Skyline WXSS 支持的变换、过渡和动画属性。
 
-> ✅ 以下属性在渲染层**完全支持**。
+> ✅ 以下属性**完全支持**。
 
 ---
 
@@ -32,10 +32,29 @@ opacity = <number>                                       /* 默认 1 */
 
 ### transition
 ```bnf
-transition-property = none | <animatable-property>#
+transition-property = none | <animatable-property>#    /* 默认 all */
 transition-duration = <time>#              /* 默认 0s */
-transition-timing-function = <timing-function>#
+transition-timing-function = <timing-function>#    /* 默认 ease */
 transition-delay = <time>#                 /* 默认 0s */
+
+<animatable-property> = all | none
+    | transform | transform-origin | opacity
+    | width | height | min-width | max-width | min-height | max-height
+    | margin | margin-top | margin-right | margin-bottom | margin-left
+    | padding | padding-top | padding-right | padding-bottom | padding-left
+    | top | right | bottom | left
+    | flex | flex-grow | flex-shrink | flex-basis
+    | border | border-width | border-color | border-radius
+    | border-top-width | border-right-width | border-bottom-width | border-left-width
+    | border-top-color | border-right-color | border-bottom-color | border-left-color
+    | border-top-left-radius | border-top-right-radius | border-bottom-left-radius | border-bottom-right-radius
+    | border-top | border-right | border-bottom | border-left
+    | color | background-color | background-position | background-size | background
+    | background-position-x | background-position-y
+    | filter | backdrop-filter | box-shadow | z-index
+    | font-size | font-weight | letter-spacing | word-spacing | line-height
+    | text-decoration-color
+    | mask | mask-size | mask-position | mask-position-x | mask-position-y
 ```
 
 ---
@@ -50,9 +69,10 @@ animation-timing-function = <timing-function>#
 animation-delay = <time>#
 animation-iteration-count = [ infinite | <number> ]#
 animation-direction = [ normal | reverse | alternate | alternate-reverse ]#
-animation-fill-mode = [ none | forwards | backwards | both ]#
+animation-fill-mode = [ forwards | both ]#
 animation-play-state = [ running | paused ]#
 ```
+> ⚠️ animation-fill-mode：`none` 和 `backwards` 虽可写但实际表现均为 `forwards`
 
 ### @keyframes
 ```bnf
@@ -78,9 +98,10 @@ animation-play-state = [ running | paused ]#
 
 ### will-change
 ```bnf
-will-change = auto | [ scroll-position | contents | <custom-ident> ]#
+will-change = auto | contents
 ```
+> ⚠️ 仅支持 `auto` 和 `contents`，不支持 `scroll-position` 和 `<custom-ident>`
 
 ---
 
-*本文档基于 Skyline 渲染引擎官方文档与实际测试生成。*
+*本文档基于 Skyline 官方文档与实际测试生成。*

@@ -64,7 +64,7 @@ Skyline 渲染引擎的配置选项，嵌套在 `rendererOptions.skyline` 下。
 
 | 属性 | 类型 | 默认值 | 说明 |
 |------|------|--------|------|
-| defaultDisplayBlock | boolean | false | 开启默认 Block 布局。Skyline 默认 `display: flex`，开启后对齐 WebView 的 `display: block` |
+| defaultDisplayBlock | boolean | false | 开启默认 Block 布局。影响 display（flex→block）、flex-direction（column→row）、align-items（stretch→normal），对齐 WebView 行为 |
 | defaultContentBox | boolean | false | 开启默认 ContentBox 盒模型。Skyline 默认 `border-box`，开启后对齐 WebView 的 `content-box` |
 | tagNameStyleIsolation | string | "isolated" | 控制标签选择器的作用域。`"isolated"` 仅匹配当前组件，`"legacy"` 全局匹配（对齐 WebView） |
 | enableScrollViewAutoSize | boolean | false | 开启 scroll-view 自动撑开。开启后 scroll-view 不需要显式设置高度 |
@@ -74,10 +74,18 @@ Skyline 渲染引擎的配置选项，嵌套在 `rendererOptions.skyline` 下。
 
 ```css
 /* 默认值 false：Skyline 默认 flex 布局 */
-view { display: flex; }
+view {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
 
 /* 设为 true：对齐 WebView 行为 */
-view { display: block; }
+view {
+  display: block;
+  flex-direction: row;    /* 虽然 display:block 时不生效，但默认值变化 */
+  align-items: normal;    /* 虽然 display:block 时不生效，但默认值变化 */
+}
 ```
 
 > ⚠️ 迁移项目**强烈建议**开启此选项，否则大量使用 `display: block` 假设的样式将失效。

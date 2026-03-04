@@ -171,7 +171,7 @@
 
 | # | 检查项 | 说明 |
 |---|--------|------|
-| 1 | `defaultDisplayBlock: true` | 避免布局从 block 变为 flex |
+| 1 | `defaultDisplayBlock: true` | 避免 display 从 block 变为 flex、flex-direction 从 row 变为 column、align-items 从 normal 变为 stretch |
 | 2 | `defaultContentBox: true` | 避免盒模型从 content-box 变为 border-box |
 | 3 | `tagNameStyleIsolation: "legacy"` | 避免标签选择器作用域变化 |
 | 4 | 所有页面已添加自定义导航栏 | 替代原生导航栏 |
