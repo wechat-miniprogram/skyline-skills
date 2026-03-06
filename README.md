@@ -2,6 +2,22 @@
 
 微信小程序 Skyline 渲染引擎 Agent Skills。
 
+## 安装 Skyline Skills
+
+执行以下命令即可将 Skyline Skills 添加到你的项目中：
+
+```bash
+npx skills add wechat-miniprogram/skyline-skills
+```
+
+## 更新 Skyline Skills
+
+如需将 Skyline Skills 更新至最新版本，请运行：
+
+```bash
+npx skills update wechat-miniprogram/skyline-skills
+```
+
 ## Skills 列表
 
 | Skill | 描述 | 使用场景 |
