@@ -1,6 +1,6 @@
 # Skyline Skills
 
-微信小程序 Skyline 渲染引擎 AI Skills 技能包。
+微信小程序 Skyline 渲染引擎 Agent Skills。
 
 ## Skills 列表
 
