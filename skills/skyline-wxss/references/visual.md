@@ -19,15 +19,14 @@ background-image = <bg-image>#
 ```bnf
 background-position = <bg-position>#
 background-size = <bg-size>#
-<bg-size> = cover | contain | <length>{1,2}
+<bg-size> = auto | cover | contain | <length>{1,2}
 ```
 
 ### background-repeat
 ```bnf
 background-repeat = <repeat-style>#
-<repeat-style> = repeat-x | repeat-y | [ repeat | no-repeat | space | round ]{1,2}
+<repeat-style> = repeat-x | repeat-y | [ repeat | no-repeat ]{1,2}
 ```
-> ⚠️ 不支持：`space`, `round`
 
 ### background-attachment ⛔ / background-clip ⛔ / background-origin ⛔
 > ⛔ 以上三个属性不可用
@@ -49,8 +48,8 @@ background-repeat = <repeat-style>#
 
 ### radial-gradient
 ```bnf
-<radial-gradient> = radial-gradient( [ circle || <size> ]? [ at <position> ]? , <color-stop-list> )
-<size> = closest-side | farthest-side | closest-corner | farthest-corner | <length>{1,2}
+<radial-gradient> = radial-gradient( circle [ <size> ]? [ at <position> ]? , <color-stop-list> )
+<size> = closest-side | farthest-side | closest-corner | farthest-corner | <length>
 ```
 > ⚠️ 限制：
 > - 仅支持 `circle` 形状（不支持 `ellipse`）
@@ -71,8 +70,8 @@ background-repeat = <repeat-style>#
 > ⚠️ 多值数量限制：
 > - `background-image` / `mask-image` 最多支持 **2 个值**
 > - `background-position` 最多支持 **2 组值**
-> - `background-repeat` **不支持多组值**
-> - `background-size` **不支持多组值**
+> - `background-repeat` 最多支持 **2 组值**
+> - `background-size` 最多支持 **2 组值**
 
 ---
 
@@ -122,16 +121,17 @@ mask-image = <mask-image-value>#
 <mask-image-value> = none | <url>  /* ⚠️ 渐变不支持，仅 url() 可用 */
 mask-size = <bg-size>#             /* 默认 auto */
 mask-repeat = <repeat-style>#      /* ⚠️ 非标准默认值: no-repeat（Web 标准默认 repeat） */
+mask-position = <bg-position>#     /* ✅ 简写有效，自动展开为 x/y */
 mask-position-x = <bg-position-value>#   /* 默认 center */
 mask-position-y = <bg-position-value>#   /* 默认 center */
 ```
-> ⚠️ `mask-position` 简写不生效，但 `mask-position-x` / `mask-position-y` 子属性有效。
+> ✅ `mask-position` 简写有效：会自动展开为 `mask-position-x` + `mask-position-y`。
 > ⚠️ `mask-image` 最多支持 **2 个值**。
 
 ### mask-origin ⛔ / mask-clip ⛔ / mask-mode ⛔
 > ⛔ 以上属性不可用
 >
-> ⚠️ **`mask` 简写部分有效**：`mask` 简写展开后，`mask-origin`/`mask-clip`/`mask-position`（简写自身）不生效，其余子属性（mask-image/repeat/position-x/position-y/size）正常生效。
+> ⚠️ **`mask` 简写部分有效**：`mask` 简写展开后，`mask-origin`/`mask-clip` 不生效，其余子属性（mask-image/repeat/position/position-x/position-y/size）正常生效。
 
 ---
 

@@ -49,13 +49,13 @@ transition-delay = <time>#                 /* 默认 0s */
     | border-top-color | border-right-color | border-bottom-color | border-left-color
     | border-top-left-radius | border-top-right-radius | border-bottom-left-radius | border-bottom-right-radius
     | border-top | border-right | border-bottom | border-left
-    | color | background-color | background-position | background-size | background
+    | background-color | background-position | background-size | background
     | background-position-x | background-position-y
     | filter | backdrop-filter | box-shadow | z-index
-    | font-size | font-weight | letter-spacing | word-spacing | line-height
     | text-decoration-color
     | mask | mask-size | mask-position | mask-position-x | mask-position-y
 ```
+> ⚠️ 通过继承生效的属性不支持 transition/animation：`color`、`font-size`、`font-weight`、`line-height`、`letter-spacing`、`word-spacing` 等。
 
 ---
 

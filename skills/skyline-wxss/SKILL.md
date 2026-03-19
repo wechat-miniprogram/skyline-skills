@@ -115,7 +115,9 @@ filter/backdrop-filter 不支持 `url()` 和 `drop-shadow()`，也**不支持多
 |---------|---------------|
 | `background` | `background-attachment`, `background-origin`, `background-clip` |
 | `text-decoration` | `text-decoration-thickness` |
-| `mask` | `mask-origin`, `mask-clip`（`mask-position` 简写自身被丢弃但 x/y 子属性有效） |
+| `mask` | `mask-origin`, `mask-clip` |
+
+> 💡 `mask-position` 简写**有效**：会自动展开为 `mask-position-x` + `mask-position-y`（类似 `background-position` 的机制）。
 
 ## Quick Reference
 
