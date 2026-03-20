@@ -21,6 +21,7 @@ background-position = <bg-position>#
 background-size = <bg-size>#
 <bg-size> = auto | cover | contain | <length>{1,2}
 ```
+默认值：`background-size: auto`
 
 ### background-repeat
 ```bnf

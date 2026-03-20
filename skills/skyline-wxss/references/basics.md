@@ -70,3 +70,24 @@
 ---
 
 *本文档基于 Skyline 官方文档与实际测试生成。*
+## CSS Variable
+
+Skyline 支持 CSS 变量（自定义属性）：
+
+```css
+page {
+  --primary-color: #1890ff;
+  --spacing: 16px;
+}
+
+.container {
+  color: var(--primary-color);
+  padding: var(--spacing);
+  width: var(--box-width, 100px);  /* 支持默认值 */
+}
+```
+
+> ⚠️ 变量名必须以 `--` 开头
+> ⚠️ `var()` 支持默认值语法：`var(--name, fallback)`
+
+---

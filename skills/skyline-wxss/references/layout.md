@@ -10,26 +10,26 @@
 
 ### display
 ```bnf
-display = none | block | inline | inline-block | flex | inline-flex | grid | flow-root
+display = none | block | inline | inline-block | flex | inline-flex
 ```
 默认值：`flex`（`rendererOptions.skyline.defaultDisplayBlock: true` 时为 `block`）
-> ⚠️ 不支持：`grid`, `flow-root`
+> ⚠️ `grid`, `flow-root` 不支持
 
 ### position
 ```bnf
-position = static | relative | absolute | fixed | sticky
+position = static | relative | absolute | fixed
 ```
 默认值：`relative`
-> ⚠️ 不支持：`sticky`（可使用 sticky-header/sticky-section 替代）
+> ⚠️ `sticky` 不支持（可使用 sticky-header/sticky-section 替代）
 
 ### overflow
 ```bnf
-overflow = <overflow-value>{1,2}
-<overflow-value> = visible | hidden | auto | scroll
+overflow = visible | hidden
 ```
 默认值：`visible`
-> ⚠️ 不支持：`auto`, `scroll`（滚动请使用 scroll-view 组件）
+> ⚠️ `auto`, `scroll` 不支持（滚动请使用 scroll-view 组件）
 > ⚠️ 不支持单独设置 `overflow-x` / `overflow-y`
+> ⚠️ 只支持单值，同时设置 X/Y
 
 ### visibility
 ```bnf
@@ -39,10 +39,10 @@ visibility = visible | hidden
 
 ### box-sizing
 ```bnf
-box-sizing = content-box | padding-box | border-box
+box-sizing = content-box | border-box
 ```
 默认值：`border-box`（`rendererOptions.skyline.defaultContentBox: true` 时为 `content-box`）
-> ⚠️ 不支持：`padding-box`
+> ⚠️ `padding-box` 不支持
 
 ### float ⛔ / contain ⛔ / resize ⛔
 > ⛔ 不可用（contain 可用 `-wx-contain` 替代）
@@ -50,8 +50,10 @@ box-sizing = content-box | padding-box | border-box
 ### aspect-ratio / content
 ```bnf
 aspect-ratio = auto | <number> [ '/' <number> ]?
-content = none | normal | <string> | <url>
+content = normal | <string>
 ```
+> ⚠️ `content: none` 等同于 `normal`（都映射为空）
+> ⚠️ `content: url()` 不支持
 
 ---
 

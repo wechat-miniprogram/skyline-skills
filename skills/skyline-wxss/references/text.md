@@ -12,7 +12,7 @@
 ```bnf
 color = <color>             /* 继承，默认 #000 */
 font-size = <length>        /* 继承 */
-line-height = normal | <number> | <length>   /* 继承 */
+line-height = normal | <number> | <length> | <percentage>   /* 继承 */
 ```
 
 ### direction ⛔
@@ -24,9 +24,9 @@ line-height = normal | <number> | <length>   /* 继承 */
 
 ### font-weight
 ```bnf
-font-weight = normal | bold | bolder | lighter | <number>
+font-weight = normal | bold | <number[100-900]>
 ```
-> ⚠️ 不支持：`bolder`, `lighter`
+> ⚠️ `bolder`, `lighter` 不支持
 
 ### font-style
 ```bnf
@@ -52,9 +52,10 @@ white-space = normal | nowrap
 
 ### word-break
 ```bnf
-word-break = normal | break-word | break-all | keep-all
+word-break = normal | break-all
 ```
 默认值：`normal`
+> ⚠️ `keep-all` 可解析但**无实际效果**（渲染层未实现），等同于 `normal`
 > ⚠️ `break-word` 被映射为 `normal`
 
 ---
@@ -63,32 +64,41 @@ word-break = normal | break-word | break-all | keep-all
 
 ### text-align
 ```bnf
-text-align = left | center | right | justify | justify-all | start | end | match-parent
+text-align = left | center | right | justify | start | end
 ```
 默认值：`start`
-> ⚠️ 不支持：`justify-all`, `match-parent`
+> ⚠️ `justify-all`, `match-parent` 不支持
 
 ### vertical-align
 ```bnf
-vertical-align = baseline | top | middle | bottom | text-top | text-bottom
+vertical-align = baseline | top | middle | bottom
 ```
-> ⚠️ 不支持：`text-top`, `text-bottom`
+> ⚠️ `text-top`, `text-bottom` 不支持
 
 ---
 
 ## 装饰
 
+### text-decoration
+```bnf
+text-decoration = <text-decoration-line> || <text-decoration-style> || <text-decoration-color>
+```
+> ⚠️ 简写部分有效：展开后 `text-decoration-thickness` **不生效**，其余 3 个子属性正常生效
+> ⚠️ 仅在 `<text>` 和 `<input>` 组件上生效
+
 ### text-decoration-line
 ```bnf
-text-decoration-line = none | [ underline || overline || line-through || blink ]
+text-decoration-line = none | underline | overline | line-through
 ```
-> ⚠️ 仅支持**单值**（`none`, `underline`, `overline`, `line-through`），不支持多值组合
+> ⚠️ 仅支持**单值**，不支持多值组合（如 `underline line-through`）
+> ⚠️ 仅在 `<text>` 和 `<input>` 组件上生效
 
 ### text-decoration-style / text-decoration-color
 ```bnf
-text-decoration-style = solid | double | dotted | dashed | wavy   /* ✅ 全部支持 */
+text-decoration-style = solid | double | dotted | dashed | wavy
 text-decoration-color = <color>
 ```
+> ⚠️ 仅在 `<text>` 和 `<input>` 组件上生效
 
 ### text-overflow
 ```bnf
