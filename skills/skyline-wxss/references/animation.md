@@ -55,7 +55,10 @@ transition-delay = <time>#                 /* 默认 0s */
     | text-decoration-color
     | mask | mask-size | mask-position | mask-position-x | mask-position-y
 ```
-> ⚠️ 通过继承生效的属性不支持 transition/animation：`color`、`font-size`、`font-weight`、`line-height`、`letter-spacing`、`word-spacing` 等。
+> ⚠️ **以下属性不支持 transition/animation**：
+> - 文本相关：`text-align`、`text-shadow`、`direction`、`white-space`、`word-break`
+> - 字体相关：`color`、`font-size`、`font-weight`、`font-style`、`font-family`、`font-feature-settings`、`line-height`、`letter-spacing`、`word-spacing`
+> - 其他：`visibility`、`pointer-events`
 
 ---
 
