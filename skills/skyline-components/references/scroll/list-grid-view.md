@@ -150,11 +150,19 @@
 
 ### 属性说明
 
-| 属性 | 类型 | 说明 |
-|------|------|------|
-| list | Array | 数据列表 |
-| child-count | number | 列表项数量 |
-| child-height | number | 列表项高度（定高模式必填） |
+| 属性 | 类型 | 默认值 | 说明 | 版本 |
+|------|------|--------|------|------|
+| type | string | static | 列表模式：`static`（定高）/ `dynamic`（不定高） | - |
+| list | Array | - | 数据列表 | - |
+| child-count | number | - | 列表项数量 | - |
+| child-height | number | - | 列表项高度（定高模式必填） | - |
+| padding | Array | [0,0,0,0] | 内边距 [top, right, bottom, left] | - |
+| initial-child-count | number | 0 | 首次渲染列表项数量，可减少初始白屏时间 | 3.7.12 |
+| binditembuild | eventhandle | - | 列表项创建时触发，`event.detail = { index }` | - |
+| binditemdispose | eventhandle | - | 列表项回收时触发，`event.detail = { index }` | - |
+
+**Bug & Tip**：
+- 目前只支持纵向滚动列表
 
 ### 事件说明
 
@@ -238,13 +246,22 @@ Page({
 
 ### 属性说明
 
-| 属性 | 类型 | 说明 |
-|------|------|------|
-| list | Array | 数据列表 |
-| child-count | number | 网格项数量 |
-| cross-axis-count | number | 交叉轴元素数量（列数） |
-| cross-axis-gap | number | 交叉轴间距 |
-| main-axis-gap | number | 主轴间距 |
+| 属性 | 类型 | 默认值 | 说明 |
+|------|------|--------|------|
+| type | string | aligned | 网格模式：`aligned`（对齐）/ `masonry`（瀑布流） |
+| list | Array | - | 数据列表 |
+| child-count | number | - | 网格项数量 |
+| cross-axis-count | number | - | 交叉轴元素数量（列数） |
+| cross-axis-gap | number | 0 | 交叉轴间距 |
+| main-axis-gap | number | 0 | 主轴间距 |
+| max-cross-axis-extent | number | 0 | 交叉轴元素最大范围 |
+| padding | Array | [0,0,0,0] | 内边距 [top, right, bottom, left] |
+| binditembuild | eventhandle | - | 列表项创建时触发，`event.detail = { index }` |
+| binditemdispose | eventhandle | - | 列表项回收时触发，`event.detail = { index }` |
+
+**Bug & Tip**：
+- 目前只支持纵向滚动列表
+- ⚠️ **Bug**：grid-builder 进入屏幕后不允许再滚出屏幕，否则会被判定成列表需要重新布局进而自动滚动到顶端
 
 ## 使用规则
 

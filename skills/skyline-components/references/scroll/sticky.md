@@ -138,9 +138,12 @@ Page({
 
 ### sticky-header
 
-| 属性 | 类型 | 默认值 | 说明 |
-|------|------|--------|------|
-| padding | Array | [0,0,0,0] | 内边距 |
+| 属性 | 类型 | 默认值 | 说明 | 版本 |
+|------|------|--------|------|------|
+| padding | Array | [0,0,0,0] | 内边距 | - |
+| offset-top | number | 0 | 吸顶时与视窗顶部的距离（px） | 3.0.0 |
+| allow-overlapping | boolean | false | 是否允许与前一个 sticky-header 重叠 | 3.7.11 |
+| bind:stickontopchange | eventhandle | - | 吸顶状态变化事件，`event.detail = { isStickOnTop }` | 3.6.2 |
 
 ## 使用规则
 

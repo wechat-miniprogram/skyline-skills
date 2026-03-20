@@ -414,7 +414,7 @@ Page({
 | 动画开发 | `skyline-worklet` | Worklet 动画系统 |
 | 样式开发 | `skyline-wxss` | WXSS 支持情况 |
 | 路由转场 | `skyline-route` | 页面转场动画 |
-
+| 兼容性诊断 | `skyline-diagnostics` | 自动检查组件兼容性问题 |
 
 ## References 目录结构
 
