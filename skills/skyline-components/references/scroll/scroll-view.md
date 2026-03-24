@@ -132,6 +132,34 @@ Page({
 })
 ```
 
+### 通过手势监听屏蔽用户滚动
+
+`scroll-view` 也可以通过手势监听屏蔽用户滚动手势，但前提是使用 Skyline 手势系统在组件外层拦截输入；这不是 `scroll-view` 默认自动禁用滚动的行为。
+
+对于原生滚动组件，需要在外层手势组件上声明 `native-view="scroll-view"` 来代理内部手势。纵向滚动通常配合 `vertical-drag-gesture-handler`，横向滚动则配合对应方向的手势组件。
+
+```html
+<vertical-drag-gesture-handler
+  native-view="scroll-view"
+  worklet:should-accept-gesture="shouldScrollRespond"
+>
+  <scroll-view type="list" scroll-y>
+    <!-- 内容 -->
+  </scroll-view>
+</vertical-drag-gesture-handler>
+```
+
+```javascript
+Page({
+  shouldScrollRespond() {
+    'worklet'
+    return false
+  }
+})
+```
+
+当回调返回 `false` 时，用户拖拽不会交给内部 `scroll-view` 处理。若需要在滚动到边界、编辑态或弹层打开时再切换行为，也可以改用 `worklet:should-response-on-move` 做动态拦截。
+
 ### 关联容器
 
 | 属性 | 类型 | 说明 |
