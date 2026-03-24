@@ -191,10 +191,10 @@ filter/backdrop-filter 不支持 `url()` 和 `drop-shadow()`，也**不支持多
 
 ```
 references/
-├── basics.md      # 基础数据类型 + 语法符号说明
-├── layout.md      # 布局、定位、盒模型
-├── flex.md        # Flex 布局
-├── visual.md      # 背景、边框、滤镜、遮罩
-├── text.md        # 文本、字体
-└── animation.md   # 变换、过渡、动画
+├── animation.md
+├── basics.md
+├── flex.md
+├── layout.md
+├── text.md
+└── visual.md
 ```

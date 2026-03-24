@@ -171,8 +171,8 @@ wx.createSelectorQuery().select('#sv').node().exec(res => {
 ```
 references/
 ├── api/
-│   ├── scroll-view-context.md     # ScrollViewContext 完整 API（属性+方法+参数）
-│   ├── draggable-sheet-context.md  # DraggableSheetContext.scrollTo 详细参数
-│   └── worklet-scroll-context.md   # worklet.scrollViewContext 详细参数与用法
-└── patterns.md                     # 滚动 API 代码模式（刷新、二级、Sheet、worklet）
+│   ├── draggable-sheet-context.md
+│   ├── scroll-view-context.md
+│   └── worklet-scroll-context.md
+└── patterns.md
 ```

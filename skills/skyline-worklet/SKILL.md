@@ -193,15 +193,15 @@ handleTap() {
 
 ```
 references/
-├── core/
-│   └── worklet-overview.md       # Worklet 概念、架构、完整示例
-├── base/
-│   ├── shared-derived.md         # SharedValue、DerivedValue、cancelAnimation
-│   └── scroll-view-context.md    # worklet 内操作 scroll-view
 ├── animation/
-│   ├── timing-spring-decay.md    # 三种基础动画类型
-│   ├── easing.md                 # Easing 缓动函数完整参考
-│   └── combine-animation.md      # sequence/repeat/delay 组合动画
+│   ├── combine-animation.md
+│   ├── easing.md
+│   └── timing-spring-decay.md
+├── base/
+│   ├── scroll-view-context.md
+│   └── shared-derived.md
+├── core/
+│   └── worklet-overview.md
 └── tool/
-    └── thread-communication.md   # runOnUI/runOnJS 线程通信
+    └── thread-communication.md
 ```

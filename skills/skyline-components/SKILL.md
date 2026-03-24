@@ -420,20 +420,23 @@ Page({
 
 ```
 references/
-├── scroll/                    # 滚动相关组件
-│   ├── scroll-view.md         # scroll-view 完整文档
-│   ├── nested-scroll.md       # 嵌套滚动模式
-│   ├── list-grid-view.md      # list-view/grid-view
-│   ├── sticky.md              # 吸顶布局
-│   └── draggable-sheet.md     # 半屏可拖拽
-├── layout/                    # 布局组件
-│   └── swiper.md              # swiper 增强特性
-├── form/                      # 表单组件
-│   └── input.md               # input/textarea
-├── media/                     # 媒体组件
-│   ├── text.md                # text/span
-│   └── image.md               # image
-└── special/                   # 特殊组件
-    ├── share-element.md       # 共享元素
-    └── snapshot.md            # 截图组件
+├── form/
+│   └── input.md
+├── gesture/
+│   ├── gesture-negotiation.md
+│   └── gesture-system.md
+├── layout/
+│   └── swiper.md
+├── media/
+│   ├── image.md
+│   └── text.md
+├── scroll/
+│   ├── draggable-sheet.md
+│   ├── list-grid-view.md
+│   ├── nested-scroll.md
+│   ├── scroll-view.md
+│   └── sticky.md
+└── special/
+    ├── share-element.md
+    └── snapshot.md
 ```

@@ -191,17 +191,17 @@ wx.navigateTo({ url: 'pageB', routeType: 'slide' })
 
 ```
 references/
+├── api/
+│   ├── navigate-to.md
+│   ├── route-events.md
+│   └── router-api.md
 ├── custom-route/
-│   ├── custom-route-guide.md    # 自定义路由完整指南（接口、原理、联动）
-│   └── route-patterns.md        # 路由动画代码模式（半屏、手势、渐显）
-├── preset-route/
-│   └── preset-route.md          # 预设路由类型与 routeOptions
-├── pop-gesture/
-│   └── pop-gesture.md           # 返回手势配置与 scroll-view 联动
+│   ├── custom-route-guide.md
+│   └── route-patterns.md
 ├── open-container/
-│   └── open-container.md        # 容器转场动画组件
-└── api/
-    ├── router-api.md            # wx.router API（add/remove/getContext）
-    ├── navigate-to.md           # wx.navigateTo 路由参数
-    └── route-events.md          # wx.onBeforeAppRoute/onAppRoute
+│   └── open-container.md
+├── pop-gesture/
+│   └── pop-gesture.md
+└── preset-route/
+    └── preset-route.md
 ```

@@ -200,20 +200,20 @@ Page({
 
 ```
 references/
-├── introduction/          # 概览与介绍
-│   ├── overview.md        # Skyline 简介与架构
-│   ├── features.md        # 功能特性详解
-│   └── component-support.md # 组件支持情况
-├── migration/             # 迁移指南
-│   ├── getting-started.md # 迁移起步
-│   ├── compatibility.md   # 常见兼容问题
-│   ├── best-practice.md   # 最佳实践
-│   └── release.md         # 发布上线
-├── api/                   # 相关 API
-│   ├── getSkylineInfo.md  # 获取 Skyline 信息
-│   └── preloadSkylineView.md # 预加载环境
-├── performance/           # 性能相关
-│   └── comparison.md      # 性能对比
-└── changelog/             # 更新日志
-    └── changelog.md       # 版本更新记录
+├── api/
+│   ├── getSkylineInfo.md
+│   └── preloadSkylineView.md
+├── changelog/
+│   └── changelog.md
+├── introduction/
+│   ├── component-support.md
+│   ├── features.md
+│   └── overview.md
+├── migration/
+│   ├── best-practice.md
+│   ├── compatibility.md
+│   ├── getting-started.md
+│   └── release.md
+└── performance/
+    └── comparison.md
 ```
