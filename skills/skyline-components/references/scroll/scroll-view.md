@@ -134,7 +134,7 @@ Page({
 
 ### 通过手势监听屏蔽用户滚动
 
-`scroll-view` 也可以通过手势监听屏蔽用户滚动手势，但前提是使用 Skyline 手势系统在组件外层拦截输入；这不是 `scroll-view` 默认自动禁用滚动的行为。
+`scroll-view` 也可以通过手势监听屏蔽用户手势，最常见的是屏蔽用户滚动输入，但前提是使用 Skyline 手势系统在组件外层拦截输入；这不是 `scroll-view` 默认自动禁用滚动的行为。
 
 对于原生滚动组件，需要在外层手势组件上声明 `native-view="scroll-view"` 来代理内部手势。纵向滚动通常配合 `vertical-drag-gesture-handler`，横向滚动则配合对应方向的手势组件。
 
@@ -159,6 +159,19 @@ Page({
 ```
 
 当回调返回 `false` 时，用户拖拽不会交给内部 `scroll-view` 处理。若需要在滚动到边界、编辑态或弹层打开时再切换行为，也可以改用 `worklet:should-response-on-move` 做动态拦截。
+
+### 屏蔽滚动的三种常见方式
+
+| 方式 | 适用场景 | 特点 |
+|------|----------|------|
+| 手势监听拦截 | 需要按状态、按时机或按边界动态决定是否响应用户滑动 | 本质是手势处理器拦截输入，适合复杂交互和嵌套协商 |
+| `scroll-x` / `scroll-y` | 直接关闭某个方向的滚动 | 是方向开关，不是手势协商能力，适合简单禁用 |
+| 直接关闭滚动能力 | 需要程序化地整体禁用滚动 | 可通过 `ScrollViewContext.scrollEnabled = false` 等方式关闭滚动，与手势拦截语义不同 |
+
+**如何选择**：
+- 只想简单禁用某个方向滚动时，优先使用 `scroll-x` 或 `scroll-y`
+- 需要在一次拖动过程中动态切换是否继续滚动时，使用 `worklet:should-accept-gesture` 或 `worklet:should-response-on-move`
+- 需要通过逻辑统一开启/关闭整个滚动能力时，使用 `ScrollViewContext.scrollEnabled = false` 这类程序化方式
 
 ### 关联容器
 

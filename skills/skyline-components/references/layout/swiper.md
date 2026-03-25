@@ -145,7 +145,7 @@ Page({
 
 ### 通过手势监听屏蔽用户拖拽
 
-`swiper` 可以配合手势组件屏蔽用户拖拽手势，这个能力来自手势监听对原生组件输入的拦截，而不是 `swiper` 默认自带的自动禁用行为。
+`swiper` 可以配合手势组件屏蔽用户手势，最常见的是屏蔽用户拖拽输入。这个能力来自手势监听对原生组件输入的拦截，而不是 `swiper` 默认自带的自动禁用行为。
 
 典型做法是在外层包裹 `horizontal-drag-gesture-handler`，并通过 `native-view="swiper"` 代理内部手势；当 `worklet:should-accept-gesture` 返回 `false` 时，用户横向拖拽不会交给 `swiper` 处理。
 
