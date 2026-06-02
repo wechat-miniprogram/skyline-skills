@@ -25,6 +25,35 @@ description: Skyline WXSS 样式支持技能。提供 Skyline 支持的 CSS 属�
 | 查看动画/过渡/变换语法 | `references/animation.md` |
 | 查看某属性是否支持 | 本文档 Quick Reference |
 | 了解渐变/滤镜的具体限制 | 本文档「渐变与滤镜限制」规则 |
+| 检查 WXSS 语法 | 本文档 「WXSS CLI」 |
+
+## WXSS CLI
+请务必调用 `skyline` CLI 对 WXSS 进行检查，确保用法正确。
+
+`skyline` CLI 可以通过 npm 进行安装：
+```bash
+npm i -g skyline-cli
+```
+
+安装完成之后，可以调用 `skyline` 命令：
+```bash
+skyline --help
+```
+
+列出所有支持的 WXSS 属性
+```bash
+skyline wxss list
+```
+
+从 stdin 读取 WXSS 文本并检查语法
+```bash
+echo "view { color: red;  }" | skyline wxss check --json
+```
+
+检查小程序工程内的 WXSS 文件
+```bash
+skyline wxss check --json --miniprogram-root ${PROJECT_ROOT} --files pages/index/index.wxss pages/list/list.wxss
+```
 
 ## 强制规则
 
