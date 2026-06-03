@@ -29,30 +29,23 @@ description: Skyline WXSS 样式支持技能。提供 Skyline 支持的 CSS 属�
 
 ## WXSS CLI
 请务必调用 `skyline` CLI 对 WXSS 进行检查，确保用法正确。
-
-`skyline` CLI 可以通过 npm 进行安装：
 ```bash
-npm i -g skyline-cli
-```
-
-安装完成之后，可以调用 `skyline` 命令：
-```bash
-skyline --help
+npx skyline-cli --help
 ```
 
 列出所有支持的 WXSS 属性
 ```bash
-skyline wxss list
+npx skyline-cli wxss list
 ```
 
 从 stdin 读取 WXSS 文本并检查语法
 ```bash
-echo "view { color: red;  }" | skyline wxss check --json
+echo "view { color: red;  }" | npx skyline-cli wxss check --json
 ```
 
 检查小程序工程内的 WXSS 文件
 ```bash
-skyline wxss check --json --miniprogram-root ${PROJECT_ROOT} --files pages/index/index.wxss pages/list/list.wxss
+npx skyline-cli wxss check --json --miniprogram-root ${PROJECT_ROOT} --files pages/index/index.wxss pages/list/list.wxss
 ```
 
 ## 强制规则
