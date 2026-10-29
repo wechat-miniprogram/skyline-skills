@@ -117,7 +117,9 @@ npx skyline-cli wxss check --json --miniprogram-root ${PROJECT_ROOT} --files pag
 
 ### NEVER: 使用 filter 的 url() 和 drop-shadow()
 
-filter/backdrop-filter 不支持 `url()` 和 `drop-shadow()`，也**不支持多个函数组合**。用 `box-shadow` 替代 `drop-shadow`。
+filter/backdrop-filter 不支持 `url()` 和 `drop-shadow()`，也**不支持多个函数组合**。
+
+`drop-shadow()` 可以用 `box-shadow` 替代，**但仅限元素盒子就是可见形状的情况**（不透明或带圆角的矩形）。元素透明、图形在背景图或字体里时（例如居中的播放图标），`box-shadow` 会沿盒子画出一圈方框，应当把阴影烘焙进图形或直接去掉。
 
 支持的函数：`blur()`, `brightness()`, `contrast()`, `grayscale()`, `hue-rotate()`, `invert()`, `opacity()`, `saturate()`, `sepia()`。
 

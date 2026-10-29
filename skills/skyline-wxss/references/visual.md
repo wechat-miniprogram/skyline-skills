@@ -111,6 +111,8 @@ backdrop-filter = none | <filter-function>
 ```
 > ⚠️ 不支持多个 filter 函数组合
 > ⚠️ 不支持：`url()`, `drop-shadow()`
+>
+> `drop-shadow()` 的阴影跟随图形 alpha，`box-shadow` 沿盒子边界绘制。只有当元素盒子本身就是可见形状（不透明或带圆角的矩形）时，换 `box-shadow` 才等价；元素是透明的、图形在背景图或字体里时，`box-shadow` 会画出一圈方框。
 
 ---
 
