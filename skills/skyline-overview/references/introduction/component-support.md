@@ -100,28 +100,6 @@
 
 ## 组件使用注意事项
 
-### text 组件
-
-```html
-<!-- ✅ 正确：纯文本用 text 包裹 -->
-<view>
-  <text>这是文本内容</text>
-</view>
-
-<!-- ❌ 错误：直接放文本 -->
-<view>这是文本内容</view>
-
-<!-- ✅ 文本省略：必须用 text 组件 -->
-<text style="overflow: hidden; white-space: nowrap; text-overflow: ellipsis;">
-  很长的文本...
-</text>
-
-<!-- ✅ 多行省略：使用 max-lines -->
-<text max-lines="2" style="overflow: hidden;">
-  很长的多行文本...
-</text>
-```
-
 ### scroll-view 组件
 
 ```html
