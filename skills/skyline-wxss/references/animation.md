@@ -72,10 +72,10 @@ animation-timing-function = <timing-function>#
 animation-delay = <time>#
 animation-iteration-count = [ infinite | <number> ]#
 animation-direction = [ normal | reverse | alternate | alternate-reverse ]#
-animation-fill-mode = [ forwards | both ]#
+animation-fill-mode = [ none | forwards | backwards | both ]#
 animation-play-state = [ running | paused ]#
 ```
-> ⚠️ animation-fill-mode：`none` 和 `backwards` 虽可写但实际表现均为 `forwards`
+> `animation-fill-mode` 四个值都生效。`none` / `backwards` 在解析时会报一条 diag（`css/css_properties/animation_fill_mode.cc:65-77`），但值仍被保留并按原语义应用（`css/resolver/css_to_style_map.cc:97-113`、`animation/css/animation_effect.cc:118-119`）。
 
 ### @keyframes
 ```bnf
